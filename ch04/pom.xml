@@ -7,11 +7,11 @@
 		<artifactId>frontend-dev-basics</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>ch03</artifactId>
+	<artifactId>ch04</artifactId>
 	<packaging>war</packaging>
 
 	<build>
-		<finalName>ch03</finalName>
+		<finalName>ch04</finalName>
 	</build>
 
 </project>
