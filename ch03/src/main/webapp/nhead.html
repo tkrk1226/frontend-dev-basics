@@ -32,6 +32,7 @@ body { font-family: "맑은 고딕" "돋움"; font-size: 0.75em; color: #333; }
 }
 
 .search-box {
+	position:relative;
 	width: 390px;
 	height: 52px;
 	border: 2px solid #19ce60;
@@ -49,7 +50,9 @@ body { font-family: "맑은 고딕" "돋움"; font-size: 0.75em; color: #333; }
 }
 
 .search-box input {
-	width: 206px;
+	position: absolute;
+	left:1%;
+	width: 256px;
 	height: 24px;
 	margin: 1px;
 	padding: 12px 10px;
@@ -59,9 +62,14 @@ body { font-family: "맑은 고딕" "돋움"; font-size: 0.75em; color: #333; }
 	line-height: 24px;
 	font-size:18px;
 	font-weight:700;
+	border:0;
+	border-radius:0;
 }
 
 .header a#keyboard {
+	position: absolute;
+	top: 10%;
+    left: 71%;
 	width: 20px;
 	height: 12px;
 	font-size: 0;
@@ -69,29 +77,37 @@ body { font-family: "맑은 고딕" "돋움"; font-size: 0.75em; color: #333; }
 }
 
 .header a#dropdown {
+	position: absolute;
+	top: 18%;
+    left: 78.3%;
 	width: 10px;
 	height: 5px;
 	font-size: 0;
 	background: #fff url("/ch03/images/nsplite.png") no-repeat -408px -77px / 457px 434px;
 }
 
-.header div.btn-search{
+div.btn-search {
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
+	top: -29.5%;
+	right: 0%;
+	bottom: 0%;
 	width: 56px;
 	background-color : #19ce60;
-	cursor: pointer;
+	border-radius: 0 0 0 0;
 }
 
 .header div.btn-search button{
 	position: absolute;
+	top:15px;
+	right: 15px;
 	width: 22px;
 	height: 22px;
 	font-size: 0;
-	background: #000 url("/ch03/images/nsplite.png") no-repeat -420px 0px / 457px 434px;
+	background: url("/ch03/images/nsplite.png") no-repeat -420px 0px / 457px 434px;
 	vertical-align: top;
+	border-radius:0;
+	border:0;
+	cursor: pointer;
 }
 
 </style>
@@ -108,8 +124,5 @@ body { font-family: "맑은 고딕" "돋움"; font-size: 0.75em; color: #333; }
 			<input type="text" />
 		</form>
 	</div>
-	
-	<img src="/ch03/images/naver.jpg" alt="" />
-	
 </body>
 </html>
