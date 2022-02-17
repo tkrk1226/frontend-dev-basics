@@ -14,6 +14,31 @@ body {
 	font-size: 0.75em;
 	color: #333;
 }
+
+#join-form {
+	width:190px;
+	border:1px solid #666;
+	margin: 50px auto;
+	padding: 10px;
+}
+
+label.legend {
+	display:block;
+	margin-top: 10px;
+}
+
+fieldset {
+	margin-top: 10px;
+	border: none;
+	
+}
+
+input[type="submit"] {
+	display: block;
+	margin: 10px auto;
+	width: 100px;
+}
+
 </style>
 </head>
 <body>
@@ -27,7 +52,7 @@ body {
 			<legend>생년월일</legend>
 			<select>
 				<option value="1970">1970</option>
-			</select> <label></label> <select>
+			</select> <label>년</label> <select>
 				<option value="01">01</option>
 			</select> <label>월</label> <select>
 				<option value="01">01</option>
@@ -36,14 +61,13 @@ body {
 
 		<fieldset>
 			<legend>성별</legend>
-			<label>남</label> <input type="radio" name="gender" value="m"
-				checked="checked"> <label>여</label> <input type="radio"
-				name="gender" value="f">
+			<label>남</label> <input type="radio" name="gender" value="m" checked="checked"> 
+			<label>여</label> <input type="radio" name="gender" value="f">
 		</fieldset>
 
 		<fieldset>
-			<input type="checkbox" name="agree-prov" value="y" checked="checked"><label>약관에
-				동의합니다.</label>
+			<input type="checkbox" name="agree-prov" value="y" checked="checked">
+			<label>약관에 동의합니다.</label>
 		</fieldset>
 
 		<input type="submit" value="가입">

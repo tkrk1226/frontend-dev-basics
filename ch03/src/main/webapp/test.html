@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: "맑은 고딕", "돋움";
+            font-size: 0.75em;
+            color: #333;
+        }
+
+
+        .header {
+            position: relative;
+            width: 1130px;
+            height: 160px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .header .logo_default {
+            position: absolute;
+            top: 50%;
+            left: -9px;
+            margin-top: -32px;
+        }
+
+
+
+        .header .logo_default .logo_naver {
+
+            background: url('images/nsplite.png');
+            background-size: 457px 434px;
+            display: inline-block;
+            width: 222px;
+            height: 52px;
+            background-position: 0 -158px;
+            background-repeat: no-repeat;
+            vertical-align: top;
+            content: '';
+        }
+
+        .header .search_area {
+            position: absolute;
+            top: 50%;
+            left: 268px;
+            margin-top: -28px;
+        }
+
+        .header .search_area .green_window {
+            position: relative;
+            width: 582px;
+            height: 52px;
+            border: 2px solid #19ce60;
+            border-radius: 2px;
+        }
+
+        .header .search_area .green_window .input_text {
+            position: relative;
+            width: 444px;
+            height: 24px;
+            padding: 13px 15px;
+            margin: 1px;
+            background-color: #fff;
+            font-size: 18px;
+            line-height: 24px;
+            color: #000;
+            font-weight: 700;
+            border: none;
+            outline: 0;
+        }
+
+
+        .header .search_area .btn_keyboard {
+            position: absolute;
+            top: 0;
+            right: 84px;
+            bottom: 0;
+            width: 36px;
+        }
+
+        .header .search_area .btn_keyboard .ico_keyboard {
+            position: absolute;
+            background-image: url('images/nsplite.png');
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            width: 20px;
+            height: 12px;
+            background-position: -420px -395px;
+            background-repeat: no-repeat;
+            vertical-align: top;
+            margin: -6px 0 0 -10px;
+            background-size: 457px 434px;
+        }
+
+        .header .search_area .btn_arw {
+            position: absolute;
+            top: 0;
+            right: 64px;
+            bottom: 0;
+            width: 22px;
+        }
+
+        .header .search_area .btn_arw .ico_arr {
+            position: absolute;
+            background-image: url('images/nsplite.png');
+            background-size: 457px 434px;
+            display: inline-block;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 5px;
+            background-position: -408px -77px;
+            background-repeat: no-repeat;
+            vertical-align: top;
+            margin: -2px 0 0 -5px;
+        }
+
+
+        .header .search_area .btn_submit {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 56px;
+            background-color: #19ce60;
+            border: none;
+        }
+
+        .header .search_area .btn_submit .ico_search_submit {
+            position: relative;
+            background-image: url('images/nsplite.png');
+            background-size: 457px 434px;
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background-position: -420px 0;
+            background-repeat: no-repeat;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo_default">
+            <a href="/" class="logo_naver"></a>
+        </div>
+        <div class="search_area">
+            <div class="green_window">
+                <input maxlength="255" class="input_text">
+                <a href="#" role="button" class="btn_keyboard">
+                    <span class="ico_keyboard"></span>
+                </a>
+                <a href="#" role="button" class="btn_arw">
+                    <span class="ico_arr"></span>
+                </a>
+            </div>
+            <button id="search_btn" type="submit" title="검색" class="btn_submit">
+                <span class="ico_search_submit"></span>
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
