@@ -27,7 +27,16 @@
 
 /*
 자바스크립트 객체를 구분하는 또 다른 방법
-
+1. 내장(Built-in, Native, Engine) 객체
+    자바 스크립트 엔진 안에 미리 내장되어 있는 객체
+    Number, Boolean, Date, RegExp, ...  : 생성자 함수
+    setTimeout, parseInt, ...           : 일반 함수
+2. 호스트 객체
+    자바스크립트 엔지이 임베드된 환경(호스트)의 객체
+    - 호스트 환경이 브라우저 : document, location, XmlHttpRequest, Window, ...
+    - 호스트 환경이 노드(node.js): os, http, fs, path, ...
+3. 사용자 객체
+    자바 스크립트 엔진이 실행되면서 생성되는 객체들...
 */
 
 console.log("===기본 타입(premitive, 원시)=====================");
