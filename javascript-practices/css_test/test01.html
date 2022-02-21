@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Position Test</title>
+<style>
+
+* {margin:0px; padding:0px}
+
+div.high, div.middle, div.low {
+    width: 300px;
+    height: 100px;
+}
+
+div.high {
+    position:relative;
+    width:1000px;
+    height: 300px;
+    background-color: brown;
+}
+
+div.middle {
+    background-color:darkgreen;
+    position:relative;
+    width:1000px;
+    height: 300px;
+}
+
+div.low {
+    background-color:orchid;
+    width:1000px;
+    height: 300px;
+}
+
+div.end {
+    position: relative;
+    background-color:rosybrown;
+    width:1000px;
+    height: 300px;
+}
+
+div.high div.high_1 {
+    width: 300px;
+    height: 200px;    
+    background-color: mediumslateblue;    
+}
+
+div.high div.high_1 div.high_1_1 {
+    width: 100px;
+    height: 50px;
+    background-color: chocolate;        
+}
+
+div.high div.high_1 div.high_1_2 {
+    position: relative;
+    top:140px;
+    width: 100px;
+    height: 50px;
+    background-color: white;
+}
+
+div.high div.high_1 div.high_1_3 {
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;        
+}
+
+div.high div.high_2 {
+    position: absolute;
+    width: 50px;    
+    top:0;
+    right:5%; /* 50px */
+    bottom:0;
+    background-color: yellow;    
+}
+
+div.high div.high_3 {
+    position: absolute;
+    width: 50px;    
+    top:0;
+    right:0;
+    bottom:0;
+    background-color: aqua;    
+}
+
+div.high div.high_3 span.high_3_1 {
+    position: relative;
+    width: 50px;
+    height: 100px;
+    display: inline-block;
+    background: blue url("C:/Users/uijin/Downloads/unsplash/1.jpg") no-repeat -10px 30px / 50px 70px;  /* 데이터 경로가 달라서 수정 필요 */
+}
+
+div.middle div.middle_1 {
+    width: 600px;
+    height: 200px;    
+    background-color: rosybrown;    
+}
+
+div.middle div.middle_1 span.middle_1_1 {
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    background-color: teal;        
+}
+
+div.middle div.middle_1 span.middle_1_2 {
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    background-color: red;
+}
+
+div.middle div.middle_1 span.middle_1_3 {
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    background-color: violet;        
+}
+
+div.low div.low_1 {
+    position: absolute;
+    width: 600px;
+    top:0;
+    bottom: 0;
+    right:0;
+    background-color: chartreuse;    
+}
+
+div.low div.low_2 {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: firebrick;    
+}
+
+div.low div.low_2 span.low_2_1 {
+    position: absolute;
+    height: 130px;
+    right: 0;
+    left: 0;
+    top:0;
+    background-color: gold;
+}
+
+div.low div.low_3 {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: cornflowerblue;    
+}
+
+div.low div.low_3 span.low_3_1{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: darkblue;    
+}
+
+div.low div.low_3 span.low_3_2{
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: black;    
+}
+
+div.end div.end_1 {
+    position: absolute;
+    width:100px;
+    height: 100px;
+    background-color: aliceblue;
+}
+
+div.end div.end_2 {
+    width:100px;
+    height: 100px;
+    background-color: blue;
+}
+
+</style>
+</head>
+<body>
+	<div class="high">
+        <div class="high_1">
+            <div class="high_1_1"></div>
+            <div class="high_1_2"></div>
+            <div class="high_1_3"></div>
+        </div>
+        <div class="high_2">
+            <span class="high_2_1"></span>
+        </div>
+        <div class="high_3">
+            <span class="high_3_1"></span>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="middle_1">
+            <span class="middle_1_1"></span>
+            <span class="middle_1_2"></span>
+            <span class="middle_1_3"></span>
+        </div>
+        <div class="middle_2">
+            <span class="middle_2_1"></span>
+        </div>
+        <div class="middle_3">
+            <span class="middle_3_1"></span>
+        </div>
+    </div>
+
+    <div class="low">
+        <div class="low_1">
+            <span class="low_1_1"></span>
+        </div>
+        <div class="low_2">
+            <span class="low_2_1"></span>
+            <span class="low_2_2"></span>
+            <span class="low_2_3"></span>
+        </div>
+        <div class="low_3">
+            <span class="low_3_1"></span>
+            <span class="low_3_2"></span>
+        </div>
+    </div>
+    <div class="end">
+        <div class="end_1">
+        </div>
+        <div class="end_2">
+        </div>
+        <div class="end_3">
+        </div>
+    </div>
+
+</body>
+</html>
