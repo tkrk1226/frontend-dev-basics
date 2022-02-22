@@ -1,5 +1,5 @@
 /**
- * Array 메서드 (Array.prototype)
+ * Array 메서드 (Array.prototype.*) Array type의 Object인데 instanceof만 Array일뿐임.
  */
 
 var colors = ['black', 'white', 'yellow'];
