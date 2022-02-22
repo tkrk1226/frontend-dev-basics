@@ -14,13 +14,26 @@ console.log(s);
 
 // 팝업창
 setTimeout(function(){
-	 var popup = window.open("popup.html", "popup", "width=600, height=400");
-	 //var popup = window.open("https://www.poscoict.com", "popup", "width=600, height=400");
-	 setTimeout(function(){
-		 // popup(자식창의  window 객체)의 내용 바꾸기
-		 // 보안 문제(Cross Domain) 때문에 같은 도메인에서만 가능하다.
-		 popup.document.write("<h1>popup text changed</h1>");
-	 }, 2000);
+	var popup = window.open("popup.html", "popup", "width=600, height=400");
+	//var popup = window.open("https://www.poscoict.com", "popup", "width=600, height=400");
+	setTimeout(function(){
+		// popup(자식창의  window 객체)의 내용 바꾸기
+		// 보안 문제(Cross Domain) 때문에 같은 도메인에서만 가능하다.
+		popup.document.write("<h1>popup text changed</h1>");
+	}, 2000);
+	 
+	setTimeout(function(){
+	// popup(자식창의 window 객체) 이동
+		popup.moveTo(200, 200);
+	}, 4000);
+	 
+	setTimeout(function(){
+		// popup(자식창의  window 객체)의 내용 바꾸기
+		// 보안 문제(Cross Domain) 때문에 같은 도메인에서만 가능하다.
+		
+		popup.message();
+				
+	}, 6000);
 	 
 }, 2000);
 

@@ -2,7 +2,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>Insert title here</title>
+<title>Insert title here</title>
+<script>
+// 현재 모니터의 width 및 height 구하기
+var widthScreen = screen.width;
+var heightScreen = screen.height;
+
+console.log(widthScreen); // 1494, 934 or 1920, 1080
+console.log(heightScreen);
+
+var child = window.open("", "", "width=200, height=200");
+
+setTimeout(function(){
+	child.moveTo(0,0);
+	child.resizeTo(widthScreen, heightScreen);
+	
+	setInterval(function(){
+		// 0.1초마다 가운데를 기준으로 Window 사이즈를 줄인다.
+		child.resizeBy(-20, -20);
+		child.moveBy(10,10);
+	}, 40);
+	
+}, 2000);
+
+</script>
 </head>
 <body>
 	<h1>BOM(Browser Object Model)</h1>
