@@ -6,12 +6,12 @@ Array.prototype.remove = function(index) {
     this.splice(index, 1);
 }
 
-Array.prototype.insert = function(index, value) {
+Array.prototype.insert = function(index, value) { 
 
     if(value instanceof Array){
-        // for (var i = 0; i < value.length; i++){
-        //     this.splice(index++, 0, value[i]);
-        // }
+        for (var i = 0; i < value.length; i++){
+            this.splice(index++, 0, value[i]); //  2, 'a'
+        }
 
         // value.forEach(function (e, index){
         //     console.log(e, index);
@@ -19,7 +19,7 @@ Array.prototype.insert = function(index, value) {
 
         // 오류!!!
         // 콜백 안의 this는 예측 못한다. (어휘 상의 this와 일치하지 않는다.)
-        // value.forEach(function (e){
+        // value.forEach(function (e){ // [a, b, c]
         //     this.splice(index++, 0, e);
         // });
 
@@ -32,9 +32,12 @@ Array.prototype.insert = function(index, value) {
         // });
         
         // 해결방법 2 : 함수의 bind로 함수 실행 때의 this를 세팅 해줄 수 있다.
-        value.forEach(function(e){
-            this.splice(index++, 0, e);
-        }.bind(this));
+        // value.forEach(function(e){
+        //     console.log("==============");
+        //     console.log(this);
+        //     console.log("==============");
+        //     this.splice(index++, 0, e);
+        // }.bind(this));
 
         // 호출과 동시에 this를 사용하고 싶으면 call, apply를 쓰고 this를 forEach에서 호출하면서 사용하고 싶다면 this를 bind해서 써라!!!
 
@@ -44,8 +47,20 @@ Array.prototype.insert = function(index, value) {
 }
 
 Array.prototype.add = function(value) {
-    this.splice(this.length, 0, value);
+    if(value instanceof Array){        
+        value.forEach(function(e){
+            this.splice(this.length, 0, e);
+        }.bind(this));
+    } else {
+        this.splice(this.length, 0, value);
+    }
 }
+
+var b = [1,3];
+b.add(4);
+console.log(b);
+b.add([100,200,300]);
+console.log(b);
 
 // List로 사용하기
 var a = [1, 2, 4];
@@ -61,11 +76,3 @@ console.log(a);               // 결과
 a.add(100);
 console.log(a);
 
-
-console.log(a);
-
-
-console.log(a);
-
-
-console.log(a);
