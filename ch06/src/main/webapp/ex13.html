@@ -3,6 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+/*
+
+기본 이벤트 핸들러 동작 막기
+1. anchor : 버튼이나 메뉴로 사용하는 경우(click event)
+2. form : validation(submit event)
+
+*/
+
+window.addEventListener('load', function(){
+	document
+		.getElementById('btn-delete')
+		.addEventListener('click', function(){
+			event.preventDefault(); // 없으면 떳다가 금방 사라짐, 링크가 되어있어서 console이 뜨고 바로 로딩되어버림
+			console.log("비밀번호 입력 다이알로그 띠우기"); 
+		
+		});
+});
+
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
