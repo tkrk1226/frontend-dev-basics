@@ -6,6 +6,8 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("li:odd").css("color", "red");   // 1, 3, 5, ...
+		$("li:even").css("color", "blue"); // 0, 2, 4, ...
 	}, 1000);
 });
 </script>

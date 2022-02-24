@@ -6,6 +6,12 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		
+		// contents
+		$("li:contains('샘플')").css("color", "red");
+		
+		// html tag
+		$("li:has('strong')").css("color", "blue");
 	}, 1000);
 });
 </script>

@@ -24,12 +24,14 @@ _jQuery.prototype.css = function(name, value){
 	for(var i = 0; i < this.length; i++){
 		this[i].style[name] = value;
 	}	
+	return this;
 }
 
 _jQuery.prototype.click = function(handler) {
 	for(var i = 0; i < this.length; i++){
 		this[i].addEventListener('click', handler);
 	}
+	return this;
 }
 
 _jQuery.prototype.get = function(index) {

@@ -5,7 +5,22 @@
 <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
 <script>
 $(function(){
-	setTimeout(function(){	
+	setTimeout(function(){
+		$(".red strong")
+			.css('color', 'red')
+			.css('fontWeight', 'normal');
+		
+		/*
+		$(".blue strong")
+		.css('color', 'blue')
+		.css('font-weight', 'normal'); // camel로 표기해야하는 이유?
+		*/
+		
+		$(".blue strong").css({
+			color: 'blue',
+			fontWeight: 'normal'
+		});
+		
 	}, 1000);
 });
 </script>

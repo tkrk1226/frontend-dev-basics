@@ -6,6 +6,10 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("#p1").text("1. 안녕하세요");
+		$("#p2").text("2. <strong>안녕하세요</strong>;"); // < : &lt; > : &gt; , & : &amp;
+		console.log($("#p3").text());
+		console.log($("#p4").text());
 	}, 1000);
 });
 </script>
@@ -21,11 +25,11 @@ $(function(){
 		HTML의 escape 문자들
 		& -> &amp;
 		space -> &nbsp;
-		< -> &lth;
+		< -> &lt;
 		> -> &gt;
 		' -> &quot;
 	-->
 	<h4>Back &amp; White</h4>
-	<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that</h4>	
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that</h4>	<!-- padding, margin으로 밀어버리는게 훨씬 나음 -->
 </body>
 </html>

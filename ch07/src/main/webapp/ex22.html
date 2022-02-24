@@ -6,12 +6,16 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		var html = "<h2>" + "제목입니다." + "</h2>";
+		$("#p1").before(html); 
 	}, 1000);
 });
 </script>
 </head>
 <body>
-	<h1>DOM 조작 API - before()</h1>
+	<!-- 그러나 prepend와 다른 점이 있다.
+	자식 객체로 추가하는 것이 아니라 같은 level상 객체를 앞에 추가하는 개념이다. -->
+	<h1>DOM 조작 API - before() : DOM Element create</h1>
 	
 	<p id="p1">
 		내용입니다.

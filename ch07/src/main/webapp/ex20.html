@@ -6,12 +6,16 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		var html = "<strong>" + "가나다라" + "</strong>";
+		var html2 = "<strong>" + "호로로록" + "</strong>";
+		$("#p1").prepend(html);
+		$("#p1").append(html2);
 	}, 1000);
 });
 </script>
 </head>
 <body>
-	<h1>DOM 조작 API - prepend()</h1>
+	<h1>DOM 조작 API - prepend() : DOM Element create</h1>
 	
 	<p id="p1">
 		마바사아자차카타파하
