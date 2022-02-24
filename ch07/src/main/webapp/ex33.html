@@ -21,11 +21,32 @@ li		{
 	font-weight:bold; 
 	cursor:pointer 
 }
-li.on	{ background-color:#287FC2; color:#fff }		
+/* li.on	{ background-color:#287FC2; color:#fff } */
+/* li.hover	{ background-color:#287FC2; color:#fff } */
+
+li.on	{ background-color:#287FC2; color:#fff }
+
 </style>
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function(){
+	
+	$("ul li").mouseover(function(){
+		
+		/*
+		$(this).css({
+			backgroundColor: "#287FC2",
+			color: "#fff"
+		});
+		*/
+		
+		$(this).addClass("on");
+	});
+	
+	$("ul li").mouseout(function(){
+		$(this).removeClass("on");
+	});
+	
 });  
 </script>
 </head>
