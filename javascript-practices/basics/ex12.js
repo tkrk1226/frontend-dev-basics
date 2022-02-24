@@ -6,7 +6,7 @@ Array.prototype.remove = function(index) {
     this.splice(index, 1);
 }
 
-Array.prototype.insert = function(index, value) { 
+Array.prototype.insert = function(index, value) { // [1,2, --- ,3] [a, b, c] 
 
     if(value instanceof Array){
         for (var i = 0; i < value.length; i++){
@@ -33,7 +33,7 @@ Array.prototype.insert = function(index, value) {
         
         // 해결방법 2 : 함수의 bind로 함수 실행 때의 this를 세팅 해줄 수 있다.
         // value.forEach(function(e){
-        //     console.log("==============");
+        //     console.log("=============="); [1,2,a,b,c,3]
         //     console.log(this);
         //     console.log("==============");
         //     this.splice(index++, 0, e);
