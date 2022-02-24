@@ -54,13 +54,11 @@ $(function(){
 	*/
 
 	$("div.tab-box > ul > li").click(function(){
-		$(this).addClass("selected");
-
 		$(this)
+			.addClass("selected")
 			.siblings()
 			.removeClass("selected");
 	});
-
 
 });
 </script>
