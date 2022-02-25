@@ -1,6 +1,7 @@
 var imageViewer = {
     init : function(){
             $(function(){
+
                 $("#btn-change, .image-viewer > div > img").click(this._changeImage.bind(this));
                 $("#btn-slideshow").click(this._slideImage.bind(this));
 
