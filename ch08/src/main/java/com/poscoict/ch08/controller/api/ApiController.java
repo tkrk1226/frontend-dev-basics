@@ -2,8 +2,10 @@ package com.poscoict.ch08.controller.api;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.poscoict.ch08.controller.dto.JsonResult;
 import com.poscoict.ch08.controller.vo.GuestbookVo;
 
 @Controller
@@ -25,17 +27,21 @@ public class ApiController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/json")
-	public Object json() {
+	@RequestMapping(value="/json", method=RequestMethod.GET)
+	public JsonResult json() {
+
+		// 객체 매핑을 Message Converter에서 못하므로 Error가 나오는 상황
+		// Jackson을 설정해서 한글이 변환되도록 해야한다.
 		GuestbookVo vo = new GuestbookVo();
 		vo.setNo(1L);
 		vo.setName("둘리");
 		vo.setMessage("호이");
 		
-		// 객체 매핑을 Message Converter에서 못하므로 Error가 나오는 상황
-		// Jackson을 설정해서 한글이 변환되도록 해야한다.
+		//JsonResult jsonResult = new JsonResult();
+		//jsonResult.setResult("ok");
 		
-		return vo;
+		return JsonResult.success(vo);
+//		return JsonResult.fail("Exception....");
 	}
 	
 }
