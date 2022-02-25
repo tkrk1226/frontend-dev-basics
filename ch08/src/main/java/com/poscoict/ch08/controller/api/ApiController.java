@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.poscoict.ch08.controller.vo.GuestbookVo;
+
 @Controller
 @RequestMapping("/api")
 public class ApiController {
@@ -13,6 +15,27 @@ public class ApiController {
 	public String text() {
 		
 		return "TEXT 데이터";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/html")
+	public String html() {
+		
+		return "<h1>AJAX 연습</h1><p>HTML 데이터</p>";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/json")
+	public Object json() {
+		GuestbookVo vo = new GuestbookVo();
+		vo.setNo(1L);
+		vo.setName("둘리");
+		vo.setMessage("호이");
+		
+		// 객체 매핑을 Message Converter에서 못하므로 Error가 나오는 상황
+		// Jackson을 설정해서 한글이 변환되도록 해야한다.
+		
+		return vo;
 	}
 	
 }
