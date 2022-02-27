@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test</title>
+<script>
+
+
+
+/* alert
+확인 버튼을 누르면 대화상자가 사라지고 코드 제어권이 호출한 부분으로 돌아간다.
+*/
+// alert("alert");
+
+/* prompt
+string 값으로 값을 입력받는다.
+취소 하는 경우, null과 typeof는 string object 둘 중에 하나로 잡히는 듯하다.
+*/
+// var name = prompt("이름을 입력하세요.");
+// console.log(name, typeof(name));
+// var password = prompt("비밀번호를 입력하세요.");
+// console.log(password, typeof(password));
+
+/* confirm
+반환 값이 true, false로 결정된다.
+*/
+var getTrue = confirm("choose confirm");
+var getFalse = confirm("choose cancle");
+console.log(getTrue, getFalse);
+
+
+</script>
+</head>
+<body>
+	<h1>선택자 - 그룹</h1>
+	<ul>
+		<li id="first">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="third">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test</title>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var msg = "hello";
+
+console.log("----------dir------------");
+console.dir("dir");
+console.log("----------error------------");
+console.error("error");
+console.log("----------info------------");
+console.info("info");
+console.log("----------log------------");
+console.log("log");
+console.log("----------time------------");
+// console.time("time start");
+console.time("time start");
+console.time(msg);
+console.log("----------timeEnd------------");
+// console.timeEnd("time end"); // 같은 value의 원시타입 혹은 객체를 찾는다.
+console.timeEnd("time start");
+console.timeEnd(msg);
+console.log("----------trace------------");
+console.trace("trace");
+console.log("----------warn------------");
+console.warn("warn");
+
+
+</script>
+</head>
+<body>
+	<h1>선택자 - 그룹</h1>
+	<ul>
+		<li id="first">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="third">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>
