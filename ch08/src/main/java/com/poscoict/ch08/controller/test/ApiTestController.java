@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 // 동일이름 등록으로 인한 Error 방지
-@Controller("apiTestController")
+@Controller
 @RequestMapping("/test")
-public class ApiController {
+public class ApiTestController {
 
 	@RequestMapping("/text")
 	public String text() {
