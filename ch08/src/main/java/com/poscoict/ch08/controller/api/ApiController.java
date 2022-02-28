@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.poscoict.ch08.controller.dto.JsonResult;
+import com.poscoict.ch08.controller.dto.XmlResult;
 import com.poscoict.ch08.controller.vo.GuestbookVo;
 
 @Controller
@@ -28,8 +29,20 @@ public class ApiController {
 	}
 	
 	@ResponseBody
+	@RequestMapping("/xml")
+	public Object xml() {
+		
+		XmlResult.GuestbookVo vo = new XmlResult.GuestbookVo();
+		vo.setNo(1L);
+		vo.setName("둘리");
+		vo.setMessage("호이");
+		
+		return XmlResult.success(vo);
+	}
+	
+	@ResponseBody
 	@RequestMapping(value="/json", method=RequestMethod.GET)
-	public JsonResult json() {
+	public Object json() {
 
 		// 객체 매핑을 Message Converter에서 못하므로 Error가 나오는 상황
 		// Jackson을 설정해서 한글이 변환되도록 해야한다.

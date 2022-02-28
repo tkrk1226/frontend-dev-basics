@@ -22,6 +22,30 @@
 				</property>
 			</bean>
 			<!-- 2. xml message converter -->
+			<!-- 
+			
+				1. Marshalling
+					: 데이터(Object)를 xml 만드는 것
+				2. Unmarshalling
+					: xml 데이터를 데이터 형태(Object)로 만드는 것
+			 	3. java 지원
+			 		1) OXM (Object Xml Mapping)
+			 			- XML 데이터와 객체를 매핑
+			 			- MarshallingHttpMessageConverter
+			 		2) JAXB (Java Architecture for XML Binding)
+			 			- OXM을 쉽게 도와 주는 Tool
+			 			- Marshalling/Unmarshalling을 Annotation 기반으로 한다.
+			 			- JAXBAnnotation(@@XmlRootElement)을 사용해서 직관적으로 매핑한다.
+			 			- Jaxb2RootElementHttpMessageConverter 
+			 -->
+			 <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/xml; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+
 
 			<!-- 3. JSON message converter -->
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
