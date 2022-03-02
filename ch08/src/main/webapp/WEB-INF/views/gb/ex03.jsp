@@ -57,15 +57,72 @@ $(function(){
 	// ...
 	// ...
 	
-	var dialogDelete = $("dialog-delete-form").dialog({
+	var dialogDelete = $("#dialog-delete-form").dialog({
 		autoOpen: false,
-		modal: true
-	});
+		modal: true,
+		buttons: {
+			"삭제": function(){
+				var no = $("#hidden-no").val();
+				var password = $("#password-delete");
+				var url = "${pageContext.request.contextPath}/api/guestbook/delete/" + no;
+				
+				$.ajax({
+					url: url,
+					type:'post',
+					dataType:'json',
+					data:"password"+password,
+					success: function(response){
+
+						if(response.result !== 'success'){
+							console.error(response.message);
+							return;
+						}
+						
+						// 삭제 안된 경우
+						if(response.data == -1){
+							// 하위가 아니라 종속임
+							$(".validateTips.error").show();
+							$("#password-delete").val("").focus();
+							return;
+						}
+						
+						// 삭제 된 경우
+						$("#list-guestbook li[data-no='" + response.data + "']").remove();
+						dialogDelete.dialog('close');
+						
+						console.log(response);
+						
+					}
+				});
+			},
+			"취소": function(){
+				$(this).dialog('close');	
+			}
+		},
+		close: function(){
+			$(".validateTips.error").hide();
+			$("#password-delete").val("");
+			$("#hidden-no").val("");
 	
-	dialogDelete.dialog('open');
+		}
+	});
+			
+	// 글 삭제 버튼 Click 이벤트 처리 (Live Event)
+	// click event가 Element에 생길거라는 것을 알려주고 위임
+	$(document).on("click", "#list-guestbook li a", function(){
+		event.preventDefault();
+		var no = $(this).data("no");
+		console.log(no);
+		$("#hidden-no").val(no);
+		dialogDelete.dialog('open');
+	})
 	
 	// 최초 리스트 가져오기
 	fetch();
+	
+	// api call을 하고 그려지는 건 시간이 좀 필요하다. DOM이 다 만들어져야하므로 코드 순서의 문제가 아니라 
+	// 나중에 생길 element에 대해 mapping을 시켜야함.
+	// 그렇게 하기 위해서는 document에게 역할을 위임해야한다.
 	
 });
 </script>
@@ -81,35 +138,6 @@ $(function(){
 				</form>
 				<ul id="list-guestbook">
 
-					<li data-no=''>
-						<strong>지나가다가</strong>
-						<p>
-							별루입니다.<br>
-							비번:1234 -,.-
-						</p>
-						<strong></strong>
-						<a href='' data-no=''>삭제</a> 
-					</li>
-					
-					<li data-no=''>
-						<strong>둘리</strong>
-						<p>
-							안녕하세요<br>
-							홈페이지가 개 굿 입니다.
-						</p>
-						<strong></strong>
-						<a href='' data-no=''>삭제</a> 
-					</li>
-
-					<li data-no=''>
-						<strong>주인</strong>
-						<p>
-							아작스 방명록 입니다.<br>
-							테스트~
-						</p>
-						<strong></strong>
-						<a href='' data-no=''>삭제</a> 
-					</li>
 				</ul>
 			</div>
 			<div id="dialog-delete-form" title="메세지 삭제" style="display:none">
