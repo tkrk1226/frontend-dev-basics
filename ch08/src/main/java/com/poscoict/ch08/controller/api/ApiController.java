@@ -62,13 +62,17 @@ public class ApiController {
 	@RequestMapping(value="/post01", method=RequestMethod.POST)
 	public JsonResult post01(GuestbookVo vo) {
 		
-		System.out.println("---------------");
+		System.out.println("-------1--------");
 		System.out.println(vo);
 		System.out.println("---------------");
 		
 		// service -> repository : DB insert 성공한 후,
 		vo.setNo(1L);
 		vo.setPassword("");
+		
+		System.out.println("-------2--------");
+		System.out.println(vo);
+		System.out.println("---------------");
 		
 		return JsonResult.success(vo);
 	}

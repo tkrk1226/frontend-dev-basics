@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test</title>
+<script>
+
+function displayTime() {
+    var d = new Date();
+    console.log("현재 시각은 " + d.toLocaleString() + " 입니다.");
+    console.log("현재 시각은 " + d.toLocaleDateString() + " 입니다.");
+    console.log("현재 시각은 " + d.toLocaleTimeString() + " 입니다.");
+}
+
+window.onload = function(){
+    var button = document.getElementById("button");
+    button.onclick = displayTime;
+};
+</script>
+</head>
+<body>
+
+    <input type="button" value="click" id="button">
+
+	<h1>선택자 - 그룹</h1>
+	<ul>
+		<li id="first">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="second">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="third">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="fourth">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

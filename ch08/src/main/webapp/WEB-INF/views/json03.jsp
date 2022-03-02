@@ -33,6 +33,7 @@ $(function(){
 				}
 			
 				var html = "";
+				
 				html += ("<h1>" + response.data.no + "</h1>");
 				html += ("<h2>" + response.data.name + "</h2>");
 				html += ("<h3>" + response.data.message + "</h3>");
