@@ -31,7 +31,7 @@ public class GuestbookController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="/list", method=RequestMethod.GET) // ternalling이 되지 않도록 url setting 필요
+	@RequestMapping(value="/list", method=RequestMethod.GET) // turnneling이 되지 않도록 url setting 필요
 	public JsonResult ex02(@RequestParam(value="sn", required = true, defaultValue = "-1") Long no) {
 
 //		guestbookService.findAll(no);

@@ -27,11 +27,11 @@ var render = function(vo) { // vo is data
 }
 
 //최초의 no
-var startNo = -1; 
+//var startNo = -1; 
 
 var fetch = function(){			
 	$.ajax({
-		url: '${pageContext.request.contextPath}/api/guestbook/list?sn='+startNo,
+		url: '${pageContext.request.contextPath}/api/guestbook/list', //startNo
 		type:'get',
 		dataType:'json',
 		success : function(response){
@@ -45,7 +45,7 @@ var fetch = function(){
 				var vo = response.data[i];
 				var html = render(vo);
 				$("#list-guestbook").append(html);
-				startNo = response.data[i].no;
+				//startNo = response.data[i].no;
 			}
 		}
 	});
@@ -115,7 +115,7 @@ $(function(){
 		console.log(no);
 		$("#hidden-no").val(no);
 		dialogDelete.dialog('open');
-	})
+	});
 	
 	// 최초 리스트 가져오기
 	fetch();

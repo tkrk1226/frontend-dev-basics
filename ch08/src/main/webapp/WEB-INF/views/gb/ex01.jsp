@@ -32,7 +32,12 @@ $(function(){
 		vo.name = $("#input-name").val();
 		vo.password = $("#input-password").val();
 		vo.message = $("#tx-content").val();
-			
+		
+		// json객체로 들어감
+		//console.log("--------------------------------");
+		//console.log(vo);
+		//console.log("--------------------------------");
+		
 		$.ajax({
 			url: '${pageContext.request.contextPath}/api/guestbook/add',
 			type:'post',
