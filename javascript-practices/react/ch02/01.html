@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+var div, container = document.getElementById('container');
+
+for (var i = 0; i < 5; i++){
+    div = document.createElement('div');
+    div.onclick = function(){
+        alert('이것은 박스 #' + i + '입니다.');
+    }
+    container.appendChild(div);
+}
+
+var gangwon = {
+    resorts : ["평창", "강릉"],
+    print : (delay=1000) => {
+        setTimeout(() => {
+            console.log(this.resorts.join(","));
+        }, delay);
+    }
+}
+
+
+// 과거
+var skier = {
+    name: name,
+    sound: sound,
+    powderYell: function() {
+    var yell = this.sound.toUpperCase()
+    console.log(`${yell} ${yell} ${yell}!!!`)
+},
+    speed: function(mph) {
+    this.speed = mph
+    console.log('속력(mph):', mph)
+    }
+}
+
+// 새로운 방식
+const skier = {
+      name,
+      sound,
+      powderYell() {
+        let yell = this.sound.toUpperCase()
+        console.log(`${yell} ${yell} ${yell}!!!`)
+      },
+      speed(mph) {
+        this.speed = mph
+        console.log('속력(mph):', mph)
+      }
+    }
+
+
+    skier.powderYell()
+    skier.speed("엉덩이에 불날 것 같은")
+    console.log(JSON.stringify(skier))
+
+
+</script>
+</head>
+<body>
+    
+
+
+</body>
+</html>

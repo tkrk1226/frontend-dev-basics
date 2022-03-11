@@ -1,3 +1,7 @@
+x;
+var x;
+console.log("=================");
+
 var card = {
     name : "slideDeck",
     point : 50
