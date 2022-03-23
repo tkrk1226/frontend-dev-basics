@@ -12,13 +12,31 @@
 <script type="text/babel">
 
     var createScream = function(logger) {
+        console.log(logger);
         return function(message) {
-            logger(message.toUpperCase() + "!!!")
+            let logger_result = logger(message.toUpperCase() + "!!!")
+            return logger_result;
         }
     }
 
-    const scream = createScream(message => console.log(message))
+    const sc = createScream(function(mes){
+        // console.log(mes);
+        // let result = mes + "@@@";
+        // return result;
+        return mes;
+    });
+    console.log(sc);
+    console.log(sc('1ab2'));
 
+    // const sc = createScream(function(message){
+    //     console.log(message);
+    // })
+
+    // const sc1 = createSc/ream('11aa');
+
+    // sc("111aa");
+    // console.log(sc1);
+    const scream = createScream(message1 => console.log(message1))
     scream('함수가 함수를 반환할 수도 있습니다')
     scream('createScream은 함수를 반환합니다')
     scream('scream은 createScream이 반환한 함수를 가리킵니다')
